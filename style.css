@@ -1,152 +1,178 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
 
 :root {
-    /* Primary Colors */
-    --color-moderate-violet: hsl(263, 55%, 52%);
-    --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
-    --color-very-dark-blackish-blue: hsl(219, 29%, 14%);
-    --color-very-dark-blackish-blue-op: hsla(219, 29%, 14%, .5);
-    --color-white: hsl(0, 0%, 100%);
-    --color-white-opaque: hsla(0, 0%, 100%, 0.5);
+  /* Primary Colors */
+  --color-moderate-violet: hsl(263, 55%, 52%);
+  --color-moderate-violet-op: hsl(263, 90%, 68%);
+  --color-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --color-very-dark-blackish-blue-op: hsla(219, 29%, 14%, 0.5);
+  --color-white: hsl(0, 0%, 100%);
+  --color-white-opaque: hsla(0, 0%, 100%, 0.5);
 
-    /* Font */
-    --ff-barlow: 'Barlow Semi Condensed', sans-serif;
+  /* Font */
+  --ff-barlow: 'Barlow Semi Condensed', sans-serif;
 
-    /* Font Sizes */
-    --fs-smaller: 13px;
+  /* Font Sizes */
+  --fs-smaller: 13px;
 
-    /* Neutral Colors */
-    --color-light-gray: hsl(0, 0%, 81%);
-    --color-light-grayish-blue: hsl(210, 46%, 95%);
+  /* Neutral Colors */
+  --color-light-gray: hsl(0, 0%, 81%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
 
-    /* Note for text colors: */
+  /* Note for text colors: */
 
-    /* 1. "Verified Graduate" has the same color as the person's name with 50% opacity */
-    /* 2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+  /* 1. "Verified Graduate" has the same color as the person's name with 50% opacity */
+  /* 2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 html {
-    font-family: var(--ff-barlow);
-    font-size: var(--fs-smaller);
+  font-family: var(--ff-barlow);
+  font-size: var(--fs-smaller);
 }
 
-body { 
-    box-sizing: border-box;
-    padding: 1.5rem;
-    background-color: var(--color-light-grayish-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+body {
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background-color: var(--color-light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 1.5rem;
-    width: min(100%, 45rem);
-    height: min-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+  width: min(100%, 45rem);
+  height: min-content;
 }
 
 img {
-    max-width: 100%;
-    display: block;
-    border-radius: 50%;
+  max-width: 100%;
+  display: block;
+  border-radius: 50%;
 }
 
 .card {
-    display: grid;
-    grid-gap: 1em;
-    padding: 2em;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: grid;
+  grid-gap: 1em;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+}
+
+/* double quote in card--1  */
+.card--1::before {  
+  content: '\201C';
+  color: var(--color-moderate-violet-op);
+  font-size: 32rem;
+  font-family: sans-serif;
+  position: absolute;
+  z-index: 1;
+  top: -3.5rem;
+  right: 10%;
+  line-height: 1;
+}
+
+/* putting the 'double quote' behind the card text  */
+.profile,
+.review {
+    z-index: 2;
 }
 
 .profile {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-photo {
-    width: 3em;
-    height: 3em;
-    margin-right: 1em;
+  width: 3em;
+  height: 3em;
+  margin-right: 1em;
 }
 
 .profile-verified {
-    font-size: .8rem;
+  font-size: 0.8rem;
 }
 /* Background Colors  */
 
-.bg-dark { background-color: var(--color-very-dark-blackish-blue); }
-.bg-grey { background-color: var(--color-very-dark-grayish-blue); }
-.bg-violet { background-color: var(--color-moderate-violet); }
-.bg-light { background-color: var(--color-white); }
-.bg-lighter { background-color: var(--color-white-opaque); }
-
+.bg-dark {
+  background-color: var(--color-very-dark-blackish-blue);
+}
+.bg-grey {
+  background-color: var(--color-very-dark-grayish-blue);
+}
+.bg-violet {
+  background-color: var(--color-moderate-violet);
+}
+.bg-light {
+  background-color: var(--color-white);
+}
+.bg-lighter {
+  background-color: var(--color-white-opaque);
+}
 
 /* Text Colors  */
 
 .text-dark {
-    color: var(--color-very-dark-grayish-blue);
+  color: var(--color-very-dark-grayish-blue);
 }
 
 .text-dark-opaque {
-    color: var(--color-very-dark-blackish-blue-op);
+  color: var(--color-very-dark-blackish-blue-op);
 }
 
 .text-light {
-    color: var(--color-white);
+  color: var(--color-white);
 }
 
 .text-light-opaque {
-    color: var(--color-white-opaque);
+  color: var(--color-white-opaque);
 }
-
 
 @media screen and (min-width: 56.25rem) {
-    .container {
-        width: min(100%, 80rem);
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 1fr auto;
-    }
+  .container {
+    width: min(100%, 80rem);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr auto;
+  }
 
-    .card--1 {
-        grid-column: 1 / 3;
-        grid-row: 1 / 2;
-    }
+  .card--1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
 
-    .card--2 {
-        grid-column: 3 / 4;
-        grid-row: 1 / 2;
-    }
+  .card--2 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+  }
 
-    .card--3 {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-    }
+  .card--3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
 
-    .card--4 {
-        grid-column: 2 / 4;
-        grid-row: 2 / 3;
-    }
+  .card--4 {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+  }
 
-    .card--5 {
-        grid-column: 4 / 5;
-        grid-row: 1 / 3;
-    }
+  .card--5 {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+  }
 
-    footer {
-        grid-column: 1 / 5;
-        grid-row: 3 / 4;
-    }
+  footer {
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+  }
 }
-
-
-
